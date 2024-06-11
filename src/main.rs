@@ -229,6 +229,27 @@ fn handle_declarations(
 }
 
 fn main() {
+    // if --help is passed as an argument, print the help message and exit
+
+    if env::args().any(|x| x == "--help") {
+        println!("Parses one or more CSS stylesheets and outputs a list of custom properties and the selectors that use them.");
+        println!();
+        println!("Usage: css-audit [options] <stylesheet>...");
+        println!();
+        println!("Options:");
+        println!("  --help             Print this help message and exit");
+        println!("  --format=terminal  Output to the terminal (default)");
+        println!("  --format=html      Output an HTML document");
+        println!("  --format=json      Output a JSON document");
+        println!("  --format=none      Do not output anything (useful for testing)");
+        println!();
+        println!("Examples:");
+        println!("  css-audit --format=html styles.css");
+        println!("  css-audit --format=json styles.css");
+        println!("  css-audit styles.css");
+        std::process::exit(0);
+    }
+
     let mut stylesheets: Vec<String> = env::args().collect();
     // remove the first argument, which is the program name
     stylesheets.remove(0);
