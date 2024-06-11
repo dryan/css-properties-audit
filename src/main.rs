@@ -283,6 +283,9 @@ fn main() {
         None => OutputFormats::Terminal,
     };
 
+    // remove any arguments that start with --
+    stylesheets.retain(|x| !x.starts_with("--"));
+
     // if there are no stylesheets, print an error message and exit
     if stylesheets.len() == 0 {
         eprintln!("No stylesheets provided");
