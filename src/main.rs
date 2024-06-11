@@ -533,7 +533,7 @@ fn main() {
                     "<ul>{}</ul>",
                     value
                         .into_iter()
-                        .map(|v| format!("<li>{}</li>", v))
+                        .map(|v| format!("<li>{}</li>", v.replace("\n", "\n<br>")))
                         .collect::<Vec<String>>()
                         .join("")
                 );
