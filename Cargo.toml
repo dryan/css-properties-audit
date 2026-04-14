@@ -4,8 +4,8 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-lightningcss = "1.0.0-alpha.57"
-parcel_selectors = "0.26.5"
-serde_json = "1.0.117"
+lightningcss = "1.0.0-alpha.71"
+parcel_selectors = "0.28.2"
+serde_json = "1.0"
 serde = { version = "1.0", features = ["derive"] }
 xxhash-rust = { version = "0.8.10", features = ["xxh3", "const_xxh3"] }
